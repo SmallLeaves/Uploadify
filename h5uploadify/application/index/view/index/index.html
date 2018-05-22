@@ -1,0 +1,32 @@
+<link rel="stylesheet" type="text/css" href="/h5uploadify/public/static/index/css/Huploadify.css">
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="/h5uploadify/public/static/index/js/jquery.Huploadify.js"></script>
+<script type="text/javascript">
+	var SCOPE={
+    		'image_upload':'{:url('upload/upload')}',
+     	};
+</script>
+<script type="text/javascript">
+$(function(){
+	$('#yezisi').Huploadify({
+		auto:true,
+		fileTypeExts:'*.*',
+		multi:true,
+		showUploadedPercent:true,
+		showUploadedSize:true,
+		removeTimeout:200,
+		uploader:SCOPE.image_upload,
+		onUploadComplete:function(file,data,response){
+			// console.log('aaa');
+			console.log(file.name+'正在上传。。。');
+			// console.log(data);
+			console.log(response);
+		}
+
+	});
+});
+</script>
+<!-- <div>yezisi</div> -->
+<div id="yezisi"></div>
+<a href="#" id="btn2">开始</a>
+<a href="#" id="btn3">取消</a>
